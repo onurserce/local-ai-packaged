@@ -133,6 +133,9 @@ Before running the services, you need to set up your environment variables for S
 
 The project includes a `start_services.py` script that handles starting both the Supabase and local AI services. The script accepts a `--profile` flag to specify which GPU configuration to use.
 
+> [!NOTE]
+> **Team default:** We always run `python start_services.py --profile cpu --environment private`. Other profiles and the public environment remain available upstream but are not part of our supported flow.
+
 ### For Nvidia GPU users
 
 ```bash
