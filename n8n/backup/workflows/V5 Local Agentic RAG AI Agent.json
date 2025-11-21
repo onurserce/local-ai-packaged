@@ -184,22 +184,6 @@
     },
     {
       "parameters": {
-        "path": "bf4dd093-bb02-472c-9454-7ab9af97bd1d",
-        "responseMode": "responseNode",
-        "options": {}
-      },
-      "id": "19ccad29-d9c5-456f-a57a-071690233637",
-      "name": "Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
-      "position": [
-        1296,
-        80
-      ],
-      "webhookId": "bf4dd093-bb02-472c-9454-7ab9af97bd1d"
-    },
-    {
-      "parameters": {
         "operation": "pdf",
         "options": {}
       },
@@ -1065,24 +1049,6 @@
     },
     {
       "parameters": {
-        "respondWith": "allIncomingItems",
-        "options": {
-          "responseCode": 200,
-          "responseKey": "",
-          "enableStreaming": true
-        }
-      },
-      "type": "n8n-nodes-base.respondToWebhook",
-      "typeVersion": 1.5,
-      "position": [
-        2096,
-        -128
-      ],
-      "id": "8cee24d4-1b82-47cf-9332-e77347cbef40",
-      "name": "Respond to Webhook (latest version)"
-    },
-    {
-      "parameters": {
         "promptType": "define",
         "text": "={{ $json.chatInput }}",
         "options": {
@@ -1161,6 +1127,41 @@
           "name": "Postgres account"
         }
       }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "bf4dd093-bb02-472c-9454-7ab9af97bd1d",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        1296,
+        80
+      ],
+      "id": "6387d775-2b62-4415-82c9-84311baac346",
+      "name": "Webhook1",
+      "webhookId": "e97ee7ca-675b-4a48-af07-fe55b646ac6c"
+    },
+    {
+      "parameters": {
+        "respondWith": "allIncomingItems",
+        "options": {
+          "responseCode": 200,
+          "responseKey": "data",
+          "enableStreaming": true
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        2096,
+        -128
+      ],
+      "id": "8cee24d4-1b82-47cf-9332-e77347cbef40",
+      "name": "Respond to Webhook"
     }
   ],
   "pinData": {},
@@ -1218,11 +1219,6 @@
             "index": 0
           }
         ]
-      ]
-    },
-    "Webhook": {
-      "main": [
-        []
       ]
     },
     "Extract PDF Text": {
@@ -1496,7 +1492,7 @@
       "main": [
         [
           {
-            "node": "Respond to Webhook (latest version)",
+            "node": "Respond to Webhook",
             "type": "main",
             "index": 0
           }
@@ -1535,6 +1531,17 @@
           }
         ]
       ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": true,
@@ -1546,7 +1553,7 @@
     "availableInMCP": false,
     "timeSavedPerExecution": 1
   },
-  "versionId": "4a831ee8-0e21-4689-a202-60545a0bf9db",
+  "versionId": "1cb773ba-2c6b-4677-b8a3-a7ee3dcf9f81",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "9a3985920304a04bd1ddd82390c96868ef26cf1416eb17def46628a32b807077"
