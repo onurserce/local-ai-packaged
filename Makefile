@@ -55,8 +55,9 @@ logs: ## Follow logs for a specific service (override SERVICE, LOG_ARGS)
 logs-all: ## Follow logs for every service
 	$(COMPOSE) logs -f $(LOG_ARGS)
 
-shell: ## Open an interactive shell inside SERVICE (default /bin/bash)
-	$(COMPOSE) exec $(SERVICE) $(SHELL_CMD)
+shell: ## Open an interactive shell inside SERVICE (default /bin/bash, /bin/sh for n8n)
+	@SHELL_BIN=$$(if [ "$(SERVICE)" = "n8n" ]; then printf '/bin/sh'; else printf '$(SHELL_CMD)'; fi); \
+	$(COMPOSE) exec $(SERVICE) $$SHELL_BIN
 
 exec: ## Run an arbitrary command inside SERVICE (set RUN="...")
 ifndef RUN
