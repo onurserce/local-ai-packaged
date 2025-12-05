@@ -7,7 +7,8 @@ SERVICE ?= n8n
 SHELL_CMD ?= /bin/bash
 RUN ?=
 LOG_ARGS ?=
-PSQL_SERVICE ?= supabase-db
+# Supabase compose service is called "db" (container name is supabase-db)
+PSQL_SERVICE ?= db
 PSQL_DB ?= postgres
 PSQL_USER ?= postgres
 PSQL_EXTRA ?=

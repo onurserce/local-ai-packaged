@@ -1,0 +1,11 @@
+ipython
+jupyter
+numpy
+pandas
+openpyxl
+seaborn
+matplotlib
+plotly
+neo4j
+langchain
+python-dotenv
