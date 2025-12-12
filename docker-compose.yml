@@ -132,6 +132,7 @@ services:
         - ./neo4j/config:/config
         - ./neo4j/data:/data
         - ./neo4j/plugins:/plugins
+        - ./neo4j/backups:/backups
     expose:
       - 7473/tcp
       - 7474/tcp

@@ -6,6 +6,15 @@ openpyxl
 seaborn
 matplotlib
 plotly
+pydantic
 neo4j
+neo4j-graphrag
 langchain
+langchain-core
+langchain-neo4j
+langgraph
+langgraph-sdk
+langsmith
 python-dotenv
+httpx
+tqdm
